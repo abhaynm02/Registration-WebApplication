@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Users</title>
+    <!-- Add the Bootstrap CSS link (you might need to adjust the URL) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5">All Users</h1>
+
+    <!-- Back Button -->
+    <a class="btn btn-primary" href="home-page">Home</a>
+
+    <table class="table table-striped table-bordered table-hover">
+        <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${allUserList}">
+            <td th:text="${user.id}">ID</td>
+            <td th:text="${user.name}">Username</td>
+            <td th:text="${user.email}">Email</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Add the Bootstrap JS and jQuery scripts (you might need to adjust the URLs) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
